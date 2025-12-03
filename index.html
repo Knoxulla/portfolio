@@ -1,166 +1,239 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Knox Fouladi – Portfolio</title>
 
-<title>Knox Fouladi – Portfolio</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: "Inter", sans-serif;
+            background: #0a0a0c;
+            color: #e6e6e6;
+            display: flex;
+            min-height: 100vh;
+        }
 
-<style>
-    :root {
-        --bg: #0a0a0d;
-        --panel: rgba(255, 255, 255, 0.05);
-        --accent: #4af0ff;
-        --accent-glow: 0 0 12px #4af0ff;
-        --text: #e8e8e8;
-        --text-dim: #a8a8a8;
-    }
+        /* SIDEBAR */
+        .sidebar {
+            width: 260px;
+            background: #11121a;
+            border-right: 1px solid #1f2030;
+            padding: 30px 20px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            overflow-y: auto;
+        }
 
-    body {
-        background: var(--bg);
-        margin: 0;
-        font-family: "Inter", Arial, sans-serif;
-        color: var(--text);
-    }
+            .sidebar h1 {
+                margin-top: 0;
+                font-size: 1.8rem;
+                font-weight: 700;
+                color: #b6d1ff;
+            }
 
-    header {
-        text-align: center;
-        padding: 70px 20px;
-    }
+        .roles {
+            margin-bottom: 30px;
+            line-height: 1.4;
+            opacity: 0.85;
+        }
 
-    header h1 {
-        font-size: 3rem;
-        font-weight: 700;
-        margin: 0;
-        color: var(--accent);
-        text-shadow: var(--accent-glow);
-    }
+        .nav-links a {
+            display: block;
+            padding: 10px 0;
+            color: #86b7ff;
+            font-weight: 600;
+            text-decoration: none;
+            border-bottom: 1px solid #1f2030;
+        }
 
-    header p {
-        font-size: 1.1rem;
-        margin-top: 10px;
-        color: var(--text-dim);
-    }
+            .nav-links a:hover {
+                color: #ffffff;
+            }
 
-    .container {
-        width: 92%;
-        max-width: 1100px;
-        margin: auto;
-        padding-bottom: 80px;
-    }
+        /* MAIN CONTENT */
+        .content {
+            margin-left: 260px;
+            padding: 40px 50px;
+            width: calc(100% - 260px);
+        }
 
-    .project {
-        background: var(--panel);
-        padding: 30px;
-        margin: 30px 0;
-        border-radius: 14px;
-        backdrop-filter: blur(10px);
-        border: 1px solid rgba(255,255,255,0.1);
-    }
+        section {
+            margin-bottom: 60px;
+        }
 
-    .project h2 {
-        margin-top: 0;
-        font-size: 1.9rem;
-        color: var(--accent);
-        text-shadow: var(--accent-glow);
-    }
+        h2 {
+            font-size: 2rem;
+            color: #86b7ff;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #1f2030;
+            padding-bottom: 10px;
+        }
 
-    .project p {
-        line-height: 1.6;
-        color: var(--text-dim);
-    }
+        /* PROJECT GRID */
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 24px;
+        }
 
-    a {
-        color: var(--accent);
-        text-decoration: none;
-        font-weight: 600;
-    }
-    a:hover {
-        text-shadow: var(--accent-glow);
-    }
+        .card {
+            background: #14151f;
+            border: 1px solid #2b2d40;
+            border-radius: 14px;
+            padding: 20px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
 
-    .gallery {
-        margin-top: 20px;
-    }
+            .card:hover {
+                transform: translateY(-4px);
+                box-shadow: 0px 6px 20px rgba(0,0,0,0.3);
+            }
 
-    .gallery img, .gallery video {
-        width: 100%;
-        margin: 12px 0;
-        border-radius: 12px;
-        border: 1px solid rgba(255,255,255,0.08);
-    }
+            .card h3 {
+                margin-top: 0;
+                font-size: 1.4rem;
+                color: #b6d1ff;
+            }
 
-    footer {
-        text-align: center;
-        padding: 40px;
-        color: var(--text-dim);
-        font-size: 0.9rem;
-        margin-top: 60px;
-    }
-</style>
+        .media {
+            margin: 15px 0;
+            border-radius: 10px;
+            overflow: hidden;
+            background: #0f1017;
+            border: 1px solid #2b2d40;
+        }
+
+        iframe, img, video {
+            width: 100%;
+            display: block;
+        }
+
+        .card a {
+            color: #86b7ff;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+            .card a:hover {
+                text-decoration: underline;
+            }
+
+        /* MOBILE */
+        @media (max-width: 800px) {
+            .sidebar {
+                position: relative;
+                width: 100%;
+                border-right: none;
+                border-bottom: 1px solid #1f2030;
+            }
+
+            .content {
+                margin-left: 0;
+                width: 100%;
+                padding: 20px;
+            }
+        }
+    </style>
 </head>
+
 <body>
 
-<header>
-    <h1>Knox Fouladi</h1>
-    <p>Game Developer • UI/UX Designer • Product Designer • Data Analyst</p>
-</header>
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+        <h1>Knox Fouladi</h1>
 
-<div class="container">
+        <div class="roles">
+            UI/UX Designer<br>
+            Product Designer<br>
+            Brand Designer<br>
+            Web Designer<br>
+            Data Analyst<br>
+            Game Developer
+        </div>
 
-    <!-- FAREWELL AVALON -->
-    <div class="project">
-        <h2>Farewell Avalon</h2>
-        <p>A narrative atmospheric experience exploring memory, loss, and reconstruction.</p>
-        <p><strong>Roles:</strong> Game Developer, UI Designer</p>
-        <p><a href="YOUR_ITCH_LINK">Play on itch.io →</a></p>
-
-        <div class="gallery">
-            <img src="assets/images/avalon1.png">
-            <img src="assets/images/avalon2.png">
-            <video controls>
-                <source src="assets/videos/avalon-demo.mp4" type="video/mp4">
-            </video>
+        <div class="nav-links">
+            <a href="#about">About Me</a>
+            <a href="#works">Works</a>
         </div>
     </div>
 
-    <!-- AKIMBO -->
-    <div class="project">
-        <h2>Akimbo's Delivery Service</h2>
-        <p>A stylized delivery game focused on player flow, UI clarity, and cozy action gameplay.</p>
-        <p><strong>Roles:</strong> Lead Designer, Programmer</p>
-        <p><a href="YOUR_ITCH_LINK">Play on itch.io →</a></p>
+    <!-- MAIN CONTENT -->
+    <div class="content">
 
-        <div class="gallery">
-            <img src="assets/images/akimbo1.png">
-            <img src="assets/images/akimbo2.png">
-            <video controls>
-                <source src="assets/videos/akimbo-demo.mp4" type="video/mp4">
-            </video>
-        </div>
+        <!-- ABOUT -->
+        <section id="about">
+            <h2>About Me</h2>
+            <p>
+                I create interactive digital experiences that merge design, storytelling, and technical execution.
+                My work spans UI/UX, brand identity, gameplay systems, data-driven visualization, and full web
+                experiences. I focus on clean interfaces, emotional tone, and seamless accessibility across mediums.
+            </p>
+        </section>
+
+        <!-- WORKS -->
+        <section id="works">
+            <h2>Works</h2>
+
+            <div class="projects">
+
+                <!-- PROJECT 1 -->
+                <div class="card">
+                    <h3>Farewell Avalon</h3>
+                    <p>A narrative-first game exploring identity, atmosphere, and player-driven emotional discovery.</p>
+
+                    <div class="media">
+                        <iframe src="https://www.youtube.com/embed/VIDEO_ID"
+                                frameborder="0" allowfullscreen></iframe>
+                    </div>
+
+                    <p><a href="https://YOURITCHIO.itch.io/farewell-avalon" target="_blank">Play on itch.io →</a></p>
+                </div>
+
+                <!-- PROJECT 2 -->
+                <div class="card">
+                    <h3>Akimbo's Delivery Service</h3>
+                    <p>A fast-paced delivery game built around tight mechanics and bright stylized visuals.</p>
+
+                    <div class="media">
+                        <iframe src="https://www.youtube.com/embed/VIDEO_ID"
+                                frameborder="0" allowfullscreen></iframe>
+                    </div>
+
+                    <p><a href="https://YOURITCHIO.itch.io/akimbos-delivery-service" target="_blank">Play on itch.io →</a></p>
+                </div>
+
+                <!-- PROJECT 3 -->
+                <div class="card">
+                    <h3>Project: FRACTURING</h3>
+                    <p>A psychological, glitch-heavy digital experience built around fragmentation and identity.</p>
+
+                    <!-- empty media is allowed (works cleanly) -->
+                    <div class="media"></div>
+
+                    <p><a href="https://YOURITCHIO.itch.io/fracturing" target="_blank">Play on itch.io →</a></p>
+                </div>
+
+                <!-- OPTIONAL -->
+                <div class="card">
+                    <h3>Chrono</h3>
+                    <p>A prototype exploring precision timing and rhythm-based mechanics.</p>
+                    <p><a href="https://YOURITCHIO.itch.io/chrono" target="_blank">Play on itch.io →</a></p>
+                </div>
+
+                <div class="card">
+                    <h3>OneTrailGames</h3>
+                    <p>A set of experiments testing UI concepts and environmental storytelling.</p>
+                    <p><a href="https://YOURITCHIO.itch.io" target="_blank">View Projects →</a></p>
+                </div>
+
+            </div>
+        </section>
+
     </div>
-
-    <!-- FRACTURING -->
-    <div class="project">
-        <h2>Project: FRACTURING</h2>
-        <p>A psychological horror prototype emphasizing UI tension, distortion, and atmospheric design.</p>
-        <p><strong>Roles:</strong> Programmer, UX Systems Designer</p>
-        <p><a href="YOUR_ITCH_LINK">Play on itch.io →</a></p>
-
-        <div class="gallery">
-            <img src="assets/images/fracturing1.png">
-            <img src="assets/images/fracturing2.png">
-            <video controls>
-                <source src="assets/videos/fracturing-demo.mp4" type="video/mp4">
-            </video>
-        </div>
-    </div>
-
-</div>
-
-<footer>
-    © 2025 Knox Fouladi — All Rights Reserved
-</footer>
 
 </body>
 </html>
