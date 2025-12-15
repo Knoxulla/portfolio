@@ -8,6 +8,9 @@
 
 </head>
 <body>
+    <button class="hamburger" aria-label="Toggle menu">
+        ☰
+    </button>
 
     <!-- SIDEBAR -->
     <div class="sidebar">
@@ -34,7 +37,9 @@
 
         <!-- ABOUT -->
         <section id="about">
-
+            <br>
+            <br>
+            <br>
             <p>
                 <span style="font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 font-weight:100;
@@ -60,7 +65,7 @@ color:darkturquoise;
                     <li>Fluent Programming skills (C#, Python, JavaScript)
                     <li>Game Engine Experience (Unity, Godot, etc.)</li>
                     <li>Dataset & Database Tools (SQL, Excel, Matplotlib, Pandas)
-                       
+
                 </ul>
 
                 On my quest to uncover patterns, and create experiences that merge design, storytelling, and technical execution.
@@ -130,14 +135,16 @@ color:darkturquoise;
 
                 <!-- PROJECT 3 -->
                 <div class="card">
-                    <h3>Project: FRACTURING</h3>
-                    <div class="media"></div>
-                    <p>An open-world bullet hell focused on mobility and fast action fun!</p>
+                    <a href="projects/fracturing-dive.html">
+                        <h3>Project: FRACTURING</h3>
+                        </a>
+                        <div class="media"></div>
+                        <p>An open-world bullet hell focused on mobility and fast action fun!</p>
 
 
 
-                    <p><a href="projects/fracturing-dive.html">View Project Page →</a></p>
-                    <p><a href="https://onetrailgames.itch.io/proj-fracturing" target="_blank">Play on itch.io →</a></p>
+                        <p><a href="projects/fracturing-dive.html">View Project Page →</a></p>
+                        <p><a href="https://onetrailgames.itch.io/proj-fracturing" target="_blank">Play on itch.io →</a></p>
                 </div>
 
                 <!--<!-- PROJECT 4 --
@@ -166,6 +173,25 @@ color:darkturquoise;
         </section>
 
     </div>
+    <script>
+              const btn = document.querySelector('.hamburger');
+              const sidebar = document.querySelector('.sidebar');
 
+              btn.addEventListener('click', () => {
+                const open = sidebar.classList.toggle('open');
+
+                btn.textContent = open ? '✕' : '☰';
+                btn.setAttribute('aria-expanded', open);
+                btn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+              });
+
+
+        document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+        sidebar.classList.remove('open');
+        });
+        });
+    </script>
 </body>
+
 </html>
