@@ -98,15 +98,17 @@ h2 {
     border: 1px solid #2b2d40;
     border-radius: 14px;
     padding: 20px;
-    transition: transform 0.3s cubic-bezier(4 ), box-shadow 0.2s ease;
+   
+    transition: transform 0.4s ease-in-out, box-shadow 0.2s ease;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
 
     .card:hover {
-        transform: translateY(-4px);
-        box-shadow: 0px 6px 20px rgba(0,0,0,0.3);
+        transform: translateY(-8px);
+        box-shadow: 0px 6px 20px;
+        
     }
 
     .card h3 {
@@ -142,8 +144,8 @@ iframe, img, video {
 /* TAGS */
 .tags {
     margin-top: 1px;
-    display: flex;
-    flex-wrap: nowrap;
+    display: inline-flex;
+    flex-wrap: wrap;
     flex-direction: row;
     gap: 2px;
     overflow-x: auto;
@@ -161,6 +163,37 @@ iframe, img, video {
     font-size: 0.9rem;
     opacity: 0.9;
     text-align: center;
+}
+
+.game-jam-tag {
+    color: gold;
+    background: #11121a;
+    font-style: italic;
+    border: 1px solid gold;
+    border-radius: 8px;
+    width: fit-content;
+    max-width: 100%;
+    display: inline-flex; /* shrink to content */
+    padding: 4px 8px;
+    white-space: nowrap;
+    font-size: 0.9rem;
+    opacity: 0.9;
+    text-align: center;
+}
+.level-up-tag {
+    background: #11121a;
+    border: 1px solid green;
+    border-radius: 8px;
+    width: fit-content;
+    max-width: 100%;
+    # display: inline-flex; /* shrink to content */
+    padding: 4px 8px;
+    white-space: nowrap;
+    font-size: 0.9rem;
+    opacity: 0.9;
+    text-align: center;
+    color: #34cb34;
+    font-style:italic;
 }
 /* MOBILE */
 @media (max-width: 800px) {
