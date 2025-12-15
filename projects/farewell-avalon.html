@@ -1,90 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Farewell Avalon</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farewell Avalon</title>
 
-<style>
-    body {
-        margin: 0;
-        font-family: "Inter", sans-serif;
-        background: #0a0a0c;
-        color: #e6e6e6;
-        padding: 40px;
-        max-width: 950px;
-        margin-left: auto;
-        margin-right: auto;
-        line-height: 1.7;
-    }
+    <style>
 
-    a {
-        color: #86b7ff;
-        text-decoration: none;
-        font-weight: 600;
-    }
-    a:hover { text-decoration: underline; }
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
 
-    .back {
-        display: inline-block;
-        margin-bottom: 30px;
-        color: #86b7ff;
-    }
+        td, th {
+            border: 1px solid white;
+            text-align: left;
+            padding: 8px;
+        }
 
-    h1 {
-        font-size: 2.8rem;
-        margin-top: 0;
-        margin-bottom: 10px;
-        color: #b6d1ff;
-    }
+        th {
+            background-color: gray;
+            color: black
+        }
 
-    h2 {
-        font-size: 1.6rem;
-        margin-top: 40px;
-        margin-bottom: 12px;
-        border-bottom: 1px solid #1f2030;
-        padding-bottom: 8px;
-        color: #86b7ff;
-    }
+        tr:nth-child(even) {
+            background-color: black;
+        }
 
-    .media {
-        margin: 25px 0;
-        border-radius: 14px;
-        overflow: hidden;
-        background: #11121a;
-        border: 1px solid #2b2d40;
-    }
+        body {
+            margin: 0;
+            font-family: "Inter", sans-serif;
+            background: #0a0a0c;
+            color: ghostwhite;
+            padding: 40px;
+            max-width: 950px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.7;
+        }
 
-    iframe, video, img {
-        width: 100%;
-        display: block;
-    }
+        a {
+            color: #86b7ff;
+            text-decoration: none;
+            font-weight: 600;
+        }
 
-    /* Hide missing images automatically */
-    img, video {
-        background: #11121a;
-    }
-    img[onerror], video[onerror] {
-        display: none;
-    }
+            a:hover {
+                text-decoration: underline;
+            }
 
-    /* TAGS */
-    .tags {
-        margin-top: 15px;
-        display: flex;
-        flex-wrap: wrap;
-        gap: 10px;
-    }
-    .tag {
-        background: #11121a;
-        border: 1px solid #2b2d40;
-        padding: 6px 12px;
-        border-radius: 8px;
-        font-size: 0.9rem;
-        opacity: 0.9;
-    }
+        .back {
+            display: inline-block;
+            margin-bottom: 30px;
+            color: #86b7ff;
+        }
 
-</style>
+        h1 {
+            font-size: 2.8rem;
+            margin-top: 0;
+            margin-bottom: 10px;
+            color: #b6d1ff;
+        }
+
+        h2 {
+            font-size: 1.6rem;
+            margin-top: 40px;
+            margin-bottom: 12px;
+            border-bottom: 1px solid #1f2030;
+            padding-bottom: 8px;
+            color: #86b7ff;
+        }
+
+        .media {
+            margin: 25px 0;
+            border-radius: 14px;
+            overflow: hidden;
+            background: #11121a;
+            border: 1px solid #2b2d40;
+        }
+
+        iframe, video, img {
+            width: 100%;
+            display: block;
+        }
+
+        /* Hide missing images automatically */
+        img, video {
+            background: #11121a;
+        }
+
+            img[onerror], video[onerror] {
+                display: none;
+            }
+
+        /* TAGS */
+        .tags {
+            margin-top: 15px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .tag {
+            background: #11121a;
+            border: 1px solid #2b2d40;
+            padding: 6px 12px;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+    </style>
 </head>
 
 <body>
@@ -102,18 +129,8 @@
         <div class="tag">Programming</div>
         <div class="tag">UI/UX</div>
     </div>
-
-    <h3>Most Recent Update</h3>
-    <div class="media">
-        <!-- Replace with YouTube embed OR your MP4 -->
-        <iframe src="https://www.youtube.com/watch?v=zou9p6nuxus"
-                frameborder="0"
-                allowfullscreen>
-        </iframe>
-    </div>
-
     <h2>Overview</h2>
-    <p style="color:MediumSeaGreen;">
+    <p style="color:yellow;">
         Farewell Avalon is a top-down combat game with a unique twist to dying and a deep storyline in a world unlike before.
     </p>
     <br>
@@ -122,16 +139,28 @@
         <br>
         Help guide him through the Avalonian ruins to help find his lost memories. However, roaming these halls are old sentinels of the Avalonian people: Cariburns. These machines, now corrupted by a mysterious energy, have turned their sights onto their own creators. But don't be afraid to fight, for if you get hurt, there will always be someone by your side.
     </p>
-
     <!-- MEDIA BLOCK -->
 
     <div class="media">
         <!-- Replace with YouTube embed OR your MP4 -->
-        <iframe src="https://www.youtube.com/watch?v=IrIHyenmNT0"
+        <iframe width="420" height="315" 
+        src="https://www.youtube.com/watch?v=IrIHyenmNT0"
                 frameborder="0"
                 allowfullscreen>
         </iframe>
     </div>
+    <h2>Most Recent Update</h2>
+    <div class="media">
+        <!-- Replace with YouTube embed OR your MP4 -->
+        <iframe width="420" height="315" 
+        src="https://www.youtube.com/watch?v=zou9p6nuxus"
+                frameborder="0"
+                allowfullscreen>
+        </iframe>
+    </div>
+    <p><a href="https://centennial-game-dev.itch.io/farewell-avalon" target="_blank">Play on itch.io →</a></p>
+
+
 
     <h2>My Contributions</h2>
     <ul>
@@ -145,14 +174,93 @@
     <h2>Process</h2>
     <p>
         This was one of my first major multi-disciplinary projects; I led other programmers through version control protocol.
+        <br>
+        <br>
+    <p>
+        Coding-wise, I was in charge of te following mechanics:
+        <dl>
+            <dt style="font-style:italic">&#x2022; UI functionality
+            <dd>
+                Menu Navigation, Settings, Healthbar, and Energy Bar.
+                <br>
+                <br>
+            </dd>
+            <dt style="font-style:italic">&#x2022; Turret enemy coding
+                </dt>
+            <dd>
+                I completed a coding brief of creating a stationary enemy with 4 states.
+                <br>
+                <br>
+                <div class=" = table">
+                    <table>
+                        <tr>
+                            <th>State Name</th>
+                            <th>Description</th>
+                        </tr>
+                        <tr>
+                            <td>IDLE
+                            <td>
+                                <ul>
+                                    <li>Enemy remains stationary
+                                    <li>Plays the idle animation.
+                                    <li>No awareness of PLAYER
+                                </ul>
+                        </tr>
+                        <tr>
+                            <td>TRACKING
+                            <td>
+                                <ul>
+                                    <li>Enemy remains stationary
+                                    <li>Plays the "open" animation. Where the orb is exposed.
+                                    <li>Has awareness of PLAYER
+                                    <li>Waits a certain amount of time with the player being in the tracking area to move to the Wind Up phase.
+                                </ul>
+                        </tr>
+                        <tr>
+                            <td>WIND UP
+                            <td>
+                                <ul>
+                                    <li>Enemy remains stationary
+                                    <li>Plays the "WindUp" animation. That alters core colour for a period before moving to the ATTACK state.
+                                    <li>Awareness of PLAYER
+                                </ul>
+                        </tr>
+                        <tr>
+                            <td>ATTACK
+                            <td>
+                                <ul>
+                                    <li>Enemy remains stationary
+                                    <li>Fires projectile(s) at player directly at player. (I later upgraded it to a multi-pattern system)
+                                    <li>Returns to WIND UP State after attacking.
+                                </ul>
+                        </tr>
+                    </table>
+                </div>
+                <br>
+                </dd>
+            <dt style="font-style:italic">&#x2022; Player pick ups
+                </dt>
+            <dd>
+                Created a variable health and energy pick up system with a loot table for enemies to streamline designer use of systems.
+            <br>    
+                Additionally, created a "Key" (battery) drop. Which I then made open doors as detailed by the design team.
+                <br>
+                <br>
+            </dd>
+            <dt style="font-style:italic">&#x2022; Oversaw dialogue system integration
+
+            </dt>
+                <dd>
+                    Supervised usage of the <a href="https://github.com/snozbot/fungus">Fungus Add On</a>, coded in dialogue transitions and consulted narrative designer for more detailed implemenation.
+                    </dd>
+</dl>
+
     </p>
 
-    <div class="media">
+    <!--<div class="media">
         <img src="../assets/images/FarewellAvalon_Banner.png">
-    </div>
+    </div>-->
 
-    <h2>Play the Game</h2>
-    <p><a href="https://centennial-game-dev.itch.io/farewell-avalon" target="_blank">Play on itch.io →</a></p>
 
     <br>
     <br>
