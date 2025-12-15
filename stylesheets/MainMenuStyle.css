@@ -161,8 +161,7 @@ iframe, img, video {
 
 /* TAGS */
 .tags {
-    margin-top: 1px;
-    display: inline-flex;
+    margin-top: 5px;
     flex-wrap: wrap;
     flex-direction: row;
     gap: 2px;
@@ -170,6 +169,7 @@ iframe, img, video {
 }
 
 .tag {
+    margin: 2px;
     background: #11121a;
     border: 1px solid #2b2d40;
     border-radius: 8px;
@@ -212,6 +212,32 @@ iframe, img, video {
     text-align: center;
     color: #34cb34;
     font-style:italic;
+}
+
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+dd,li {
+    padding-bottom: 8pt;
+}
+
+td, th {
+    border: 1px solid white;
+    text-align: left;
+    padding: 8px;
+}
+
+th {
+    background-color: gray;
+    color: black
+}
+
+tr:nth-child(even) {
+    background-color: black;
 }
 /* MOBILE */
 @media (max-width: 800px) {
