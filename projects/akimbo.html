@@ -4,118 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Farewell Avalon</title>
-
-    <style>
-
-        table {
-            font-family: arial, sans-serif;
-            border-collapse: collapse;
-            width: 100%;
-        }
-
-        dd {
-            padding-bottom: 15pt;
-        }
-
-        td, th {
-            border: 1px solid white;
-            text-align: left;
-            padding: 8px;
-        }
-
-        th {
-            background-color: gray;
-            color: black
-        }
-
-        tr:nth-child(even) {
-            background-color: black;
-        }
-
-        body {
-            margin: 0;
-            font-family: "Inter", sans-serif;
-            background: #0a0a0c;
-            color: ghostwhite;
-            padding: 40px;
-            max-width: 950px;
-            margin-left: auto;
-            margin-right: auto;
-            line-height: 1.7;
-        }
-
-        a {
-            color: #86b7ff;
-            text-decoration: none;
-            font-weight: 600;
-        }
-
-            a:hover {
-                text-decoration: underline;
-            }
-
-        .back {
-            display: inline-block;
-            margin-bottom: 30px;
-            color: #86b7ff;
-        }
-
-        h1 {
-            font-size: 2.8rem;
-            margin-top: 0;
-            margin-bottom: 10px;
-            color: #b6d1ff;
-        }
-
-        h2 {
-            font-size: 1.6rem;
-            margin-top: 40px;
-            margin-bottom: 12px;
-            border-bottom: 1px solid #1f2030;
-            padding-bottom: 8px;
-            color: #86b7ff;
-        }
-
-        .media {
-            margin: 25px 0;
-            border-radius: 14px;
-            overflow: hidden;
-            background: #11121a;
-            border: 1px solid #2b2d40;
-        }
-
-        iframe, video, img {
-            width: 100%;
-            display: block;
-        }
-
-        /* Hide missing images automatically */
-        img, video {
-            background: #11121a;
-        }
-
-            img[onerror], video[onerror] {
-                display: none;
-            }
-
-        /* TAGS */
-        .tags {
-            margin-top: 15px;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-
-        .tag {
-            background: #11121a;
-            border: 1px solid #2b2d40;
-            padding: 6px 12px;
-            border-radius: 8px;
-            font-size: 0.9rem;
-            opacity: 0.9;
-        }
-
-    </style>
+    <link rel="stylesheet" href="../stylesheets/ProjectStyle.css" />
 </head>
 
 <body>
@@ -123,22 +12,17 @@
     <a class="back" href="../index.html">← Back to Portfolio</a>
 
     <h1>Akimbo's Delivery Service</h1>
-
+    <div class="media">
+        <img src="../assets/images/AkimboGameplay.png">
+    </div>
     <div class="tags">
         <div class="tag">Game Design</div>
         <div class="tag">UI/UX</div>
         <div class="tag">Project Management</div>
-        <div class="tag"> Centennial College 2023 Fall Game Jam Winner</div>
+        <div class="tag"> Game Jam Winner</div>
     </div>
 
-    <!-- MEDIA BLOCK -->
-    <div class="media">
-        <!-- Replace with YouTube embed OR your MP4 -->
-        <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID"
-                frameborder="0"
-                allowfullscreen>
-        </iframe>
-    </div>
+
 
     <h2>Overview</h2>
     <p>
@@ -153,11 +37,10 @@
 
     <h2>My Contributions</h2>
     <ul>
-        <li> Gameplay and UI programming</li>
-        <li> Programmed projectiles, pick-ups and special effects</li>
-        <li> Designed UI Implementation</li>
-        <li> Implemented Cutscenes</li>
-        <li> Managed Version Control</li>
+        <li> Game Design</li>
+        <li> Level Design</li>
+        <li> UI Programming</li>
+        <li> Project Managment</li>
     </ul>
 
     <h2>Process</h2>
@@ -168,123 +51,78 @@
     <p>
         Coding-wise, I was in charge of te following mechanics:
         <dl>
+            <dt style="font-style:italic">&#x2022; Game Design
+            <dd>
+
+            </dd>
             <dt style="font-style:italic">&#x2022; UI functionality
             <dd>
-                Menu Navigation, Settings, Healthbar, and Energy Bar.
-                <br>
-                <br>
+                Menu Navigation, Settings, Combos, and Three-strike Health System.
+
             </dd>
+
             <dt style="font-style:italic">
-                &#x2022; Turret enemy coding
-            </dt>
-            <dd>
-                I completed a coding brief of creating a stationary enemy with 4 states.
-                <br>
-                <br>
-                <div class=" = table">
-                    <table>
-                        <tr>
-                            <th>State Name</th>
-                            <th>Description</th>
-                        </tr>
-                        <tr>
-                            <td>IDLE
-                            <td>
-                                <ul>
-                                    <li>Enemy remains stationary
-                                    <li>Plays the idle animation.
-                                    <li>No awareness of PLAYER
-                                </ul>
-                        </tr>
-                        <tr>
-                            <td>TRACKING
-                            <td>
-                                <ul>
-                                    <li>Enemy remains stationary
-                                    <li>Plays the "open" animation. Where the orb is exposed.
-                                    <li>Has awareness of PLAYER
-                                    <li>Waits a certain amount of time with the player being in the tracking area to move to the Wind Up phase.
-                                </ul>
-                        </tr>
-                        <tr>
-                            <td>WIND UP
-                            <td>
-                                <ul>
-                                    <li>Enemy remains stationary
-                                    <li>Plays the "WindUp" animation. That alters core colour for a period before moving to the ATTACK state.
-                                    <li>Awareness of PLAYER
-                                </ul>
-                        </tr>
-                        <tr>
-                            <td>ATTACK
-                            <td>
-                                <ul>
-                                    <li>Enemy remains stationary
-                                    <li>Fires projectile(s) at player directly at player. (I later upgraded it to a multi-pattern system)
-                                    <li>Returns to WIND UP State after attacking.
-                                </ul>
-                        </tr>
-                    </table>
-                </div>
-                <br>
-            </dd>
-            <dt style="font-style:italic">
-                &#x2022; Player pick ups
-            </dt>
-            <dd>
-                Created a variable health and energy pick up system with a loot table for enemies to streamline designer use of systems.
-                <br>
-                Additionally, created a "Key" (battery) drop. Which I then made open doors as detailed by the design team.
-                <br>
-                <br>
-            </dd>
-            <dt style="font-style:italic">
-                &#x2022; Oversaw dialogue system integration
+                &#x2022; Managed Project Timeline
 
             </dt>
             <dd>
-                Supervised usage of the <a href="https://github.com/snozbot/fungus">Fungus Add On</a>, coded in dialogue transitions and consulted narrative designer for more detailed implemenation.
+
             </dd>
         </dl>
 
     </p>
 
-   
-  
+
+
     <h2>Contributers</h2>
     <p>
         <dl>
             <dt><a href="https://www.linkedin.com/in/knoxfouladi/">Knox Fouladi</a></dt>
-            <dd>Coding, Version Control Management</dd>
-
-            <dt><a href="https://www.linkedin.com/in/carina-choy-3b979625a/">Carina Choy</a></dt>
+            <dd>Game Design, Level Design, Project Management, UI Programming</dd>
+            <dt>
+                <a href="https://www.linkedin.com/in/ronan-daniel/">
+                    Ronan Daniel
+                </a>
+            </dt>
             <dd>
-                Design - Visuals - Animation
+                Gameplay Programming
             </dd>
+            <dt>
+                Jeremy De Manuel
+            </dt>
+            <dd>Narrative Designer, Audio Sourcing</dd>
+            <dt>
+                <a href="https://www.linkedin.com/in/jackeinorris/">
+                    Jack Dias Machado
+                </a>
+            </dt>
+            <dd>
+                3D Modeller: Weapon, Environment and Prop Design
+            </dd>
+            <dt>
+                <a href="https://www.linkedin.com/in/kesik-kritzer/">
+                    Kesik Kritzer
+                </a>
+            </dt>
+            <dd>
+                Story Art, In-Game Icons & Crosshair Design
+            </dd>
+            <dt>
+                <a href="https://www.linkedin.com/in/jiaxinzhengwu/">
+                    Jiaxin Zheng Wu
+                </a>
+            </dt>
+            <dd>Gameplay Programming, Game Design</dd>
 
-            <dt>Marc Angelo Garcia</dt>
-            <dd>Character Design</dd>
-            <dt>Adam Howe</dt>
-            <dd>Narrative</dd>
 
-            <dt><a href="https://www.linkedin.com/in/kameron-pearson-145b8925a/">Kameron Pearson</a></dt>
-            <dd>Audio, Coding, Design</dd>
-
-            <dt><a href="https://www.linkedin.com/in/ultraboo/">Leonardo Siqueira Loiola</a></dt>
-            <dd>Coding, Version Control Management</dd>
-
-            <dt><a href="https://www.youtube.com/channel/UCwgrJuY4IsOSLKBDFHg8Jbw">Razeacc</a></dt>
-            <dd>Project Management - Music - Base IP Author - Programmer</dd>
 
         </dl>
     </p>
-</body>
-</html>
 
 
     <a class="back" href="../index.html">← Back to Portfolio</a>
 
-    
+
 
 </body>
 </html>
