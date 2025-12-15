@@ -122,13 +122,21 @@ h2 {
     }
 
 .media {
-    margin: 5px 0;
-    border-radius: 10px;
+    aspect-ratio: 16 / 9; /* pick your ratio */
+    width: 100%;
     overflow: hidden;
+    border-radius: 10px;
     background: #0f1017;
     border: 1px solid #2b2d40;
-    min-height: 10px;
 }
+    .media img,
+    .media video,
+    .media iframe {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* crop, don’t stretch */
+        display: block;
+    }
 
 iframe, img, video {
     width: 100%;

@@ -69,27 +69,54 @@ h2 {
 }
 
 .media {
-    margin: 25px 0;
-    border-radius: 14px;
+    aspect-ratio: 16 / 9; /* pick your ratio */
+    width: 100%;
     overflow: hidden;
-    background: #11121a;
+    border-radius: 10px;
+    background: #0f1017;
     border: 1px solid #2b2d40;
 }
 
-iframe, video, img {
+    .media img,
+    .media video,
+    .media iframe {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* crop, don’t stretch */
+        display: block;
+    }
+
+img[onerror], video[onerror] {
+    display: none;
+}
+/* Width-based: scale width, height auto */
+.media--width {
     width: 100%;
+    height: auto;
+}
+
+
+.media--width img,
+.media--width video {
+    width: 100%;
+    height: auto; /* maintain natural aspect ratio */
+    object-fit: cover; /* crop if needed */
     display: block;
 }
 
-/* Hide missing images automatically */
-img, video {
-    background: #11121a;
+/* Height-based: scale height, width auto */
+.media--height {
+    height: 200px; /* set desired height */
+    width: auto;
 }
 
-    img[onerror], video[onerror] {
-        display: none;
+    .media--height img,
+    .media--height video {
+        height: 100%;
+        width: auto; /* maintain natural aspect ratio */
+        object-fit: cover; /* crop if needed */
+        display: block;
     }
-
 /* TAGS */
 .tags {
     margin-top: 5px;
