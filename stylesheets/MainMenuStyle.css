@@ -89,9 +89,9 @@ h2 {
 /* PROJECT GRID */
 .projects {
     display: grid;
-    flex-wrap: wrap;
-    grid-template-columns:  repeat(auto-fit, minmax(320px, 1fr));
-    gap: 24px;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 20px; /* ← space between cards (both directions) */
+    align-items: start;
 }
 
 .card {
@@ -99,11 +99,14 @@ h2 {
     border: 1px solid #2b2d40;
     border-radius: 14px;
     padding: 15px;
-   
     transition: transform 0.4s ease-in-out, box-shadow 0.2s ease;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    display: grid;
+    grid-template-rows: auto /* title */
+    auto /* media */
+    1fr /* body / filler */
+    0.2fr; /* link */
+
+    height: 100%;
 }
 
     .card:hover {
@@ -114,12 +117,12 @@ h2 {
 
     .card h3 {
         margin-top: 0;
-        font-size: 1.4rem;
+        font-size: 1.2rem;
         color: #b6d1ff;
     }
 
 .media {
-    margin: 15px 0;
+    margin: 5px 0;
     border-radius: 10px;
     overflow: hidden;
     background: #0f1017;
@@ -136,6 +139,12 @@ iframe, img, video {
     color: #86b7ff;
     font-weight: 600;
     text-decoration: none;
+}
+
+.card p {
+    margin: 10px;
+    color: #e6e6e6;
+    align-self: end;
 }
 /*
     .card a:hover {
@@ -187,7 +196,7 @@ iframe, img, video {
     border-radius: 8px;
     width: fit-content;
     max-width: 100%;
-    # display: inline-flex; /* shrink to content */
+    display: inline-flex; /* shrink to content */
     padding: 4px 8px;
     white-space: nowrap;
     font-size: 0.9rem;
@@ -199,7 +208,7 @@ iframe, img, video {
 /* MOBILE */
 @media (max-width: 800px) {
     .sidebar {
-        position: relative;
+        position: center;
         width: 100%;
         border-right: none;
         border-bottom: 1px solid #1f2030;
