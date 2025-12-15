@@ -89,7 +89,8 @@ h2 {
 /* PROJECT GRID */
 .projects {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    flex-wrap: wrap;
+    grid-template-columns:  repeat(auto-fit, minmax(320px, 1fr));
     gap: 24px;
 }
 
@@ -97,7 +98,7 @@ h2 {
     background: #14151f;
     border: 1px solid #2b2d40;
     border-radius: 14px;
-    padding: 20px;
+    padding: 15px;
    
     transition: transform 0.4s ease-in-out, box-shadow 0.2s ease;
     display: flex;
@@ -107,7 +108,7 @@ h2 {
 
     .card:hover {
         transform: translateY(-8px);
-        box-shadow: 0px 6px 20px;
+        box-shadow: 0px 6px 20px white;
         
     }
 
@@ -136,10 +137,10 @@ iframe, img, video {
     font-weight: 600;
     text-decoration: none;
 }
-
+/*
     .card a:hover {
         text-decoration: underline;
-    }
+    }*/
 
 /* TAGS */
 .tags {
