@@ -22,7 +22,7 @@
             border-right: 1px solid #1f2030;
             padding: 30px 20px;
             position: fixed;
-            text-align:center;
+            text-align: center;
             top: 0;
             left: 0;
             bottom: 0;
@@ -35,6 +35,25 @@
                 font-weight: 700;
                 color: #b6d1ff;
             }
+
+        .avatar {
+            transform: scale(0.8);
+    border: 5px solid #86b7ff; /* change color/thickness */
+            border-radius: 100%;
+            overflow: hidden;
+            display: flex;
+            justify-content: center; /* horizontal */
+            align-items: center; /* vertical */
+            object-position: center;
+        }
+
+            .avatar img {
+                transform: scale(1.2);
+                object-fit: cover;
+                object-position: center;
+            }
+
+
 
         .roles {
             margin-bottom: 30px;
@@ -149,8 +168,8 @@
 
     <!-- SIDEBAR -->
     <div class="sidebar">
-        <div class="media">
-            <img src="../assets/images/personal/ProfilePicture.png">
+        <div class="avatar">
+            <img src="assets/images/personal/ProfilePicture.png">
         </div>
         <h1>Knox Fouladi</h1>
 
