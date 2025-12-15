@@ -137,14 +137,14 @@ color:darkturquoise;
                 <div class="card">
                     <a href="projects/fracturing-dive.html">
                         <h3>Project: FRACTURING</h3>
-                        </a>
-                        <div class="media"></div>
-                        <p>An open-world bullet hell focused on mobility and fast action fun!</p>
+                    </a>
+                    <div class="media"></div>
+                    <p>An open-world bullet hell focused on mobility and fast action fun!</p>
 
 
 
-                        <p><a href="projects/fracturing-dive.html">View Project Page →</a></p>
-                        <p><a href="https://onetrailgames.itch.io/proj-fracturing" target="_blank">Play on itch.io →</a></p>
+                    <p><a href="projects/fracturing-dive.html">View Project Page →</a></p>
+                    <p><a href="https://onetrailgames.itch.io/proj-fracturing" target="_blank">Play on itch.io →</a></p>
                 </div>
 
                 <!--<!-- PROJECT 4 --
@@ -174,23 +174,42 @@ color:darkturquoise;
 
     </div>
     <script>
-              const btn = document.querySelector('.hamburger');
-              const sidebar = document.querySelector('.sidebar');
+                    const btn = document.querySelector('.hamburger');
+                    const sidebar = document.querySelector('.sidebar');
 
-              btn.addEventListener('click', () => {
-                const open = sidebar.classList.toggle('open');
+                    btn.addEventListener('click', () => {
+                      const open = sidebar.classList.toggle('open');
 
-                btn.textContent = open ? '✕' : '☰';
-                btn.setAttribute('aria-expanded', open);
-                btn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
-              });
+                      btn.textContent = open ? '✕' : '☰';
+                      btn.setAttribute('aria-expanded', open);
+                      btn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+                    });
 
 
+               // Close when clicking a nav link
         document.querySelectorAll('.nav-links a').forEach(link => {
-        link.addEventListener('click', () => {
-        sidebar.classList.remove('open');
+          link.addEventListener('click', () => {
+            closeMenu();
+          });
         });
+
+        // Close when clicking outside
+        document.addEventListener('click', (e) => {
+          if (
+            sidebar.classList.contains('open') &&
+            !sidebar.contains(e.target) &&
+            !btn.contains(e.target)
+          ) {
+            closeMenu();
+          }
         });
+
+        function closeMenu() {
+          sidebar.classList.remove('open');
+          btn.textContent = '☰';
+          btn.setAttribute('aria-expanded', 'false');
+          btn.setAttribute('aria-label', 'Open menu');
+        }
     </script>
 </body>
 

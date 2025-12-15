@@ -78,12 +78,22 @@ section {
     margin-bottom: 60px;
 }
 
+h1, h2, h3 {
+    text-align: left;
+}
+
+.card h3 {
+    text-align: center; /* card titles always centered */
+}
+
 h2 {
     font-size: 2rem;
     color: #86b7ff;
     margin-bottom: 20px;
     border-bottom: 1px solid #1f2030;
     padding-bottom: 10px;
+    text-align: left;
+    display: flex;
 }
 
 /* PROJECT GRID */
@@ -112,13 +122,13 @@ h2 {
     .card:hover {
         transform: translateY(-8px);
         box-shadow: 0px 6px 20px white;
-        
     }
 
     .card h3 {
         margin-top: 0;
         font-size: 1.2rem;
         color: #b6d1ff;
+        text-align: center;
     }
 
 .media {
@@ -129,6 +139,7 @@ h2 {
     background: #0f1017;
     border: 1px solid #2b2d40;
 }
+
     .media img,
     .media video,
     .media iframe {
@@ -198,6 +209,7 @@ iframe, img, video {
     opacity: 0.9;
     text-align: center;
 }
+
 .level-up-tag {
     background: #11121a;
     border: 1px solid green;
@@ -211,7 +223,7 @@ iframe, img, video {
     opacity: 0.9;
     text-align: center;
     color: #34cb34;
-    font-style:italic;
+    font-style: italic;
 }
 
 
@@ -221,7 +233,7 @@ table {
     width: 100%;
 }
 
-dd,li {
+dd, li {
     padding-bottom: 8pt;
 }
 
@@ -253,6 +265,7 @@ tr:nth-child(even) {
         width: 100%;
         padding: 20px;
     }
+
     .hamburger {
         display: none;
         position: fixed;
@@ -267,39 +280,33 @@ tr:nth-child(even) {
         padding: 8px 12px;
         cursor: pointer;
         line-height: 1;
+        display: block;
+    }
+    .sidebar {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 240px;
+        height: 100vh;
+        transition: left 0.3s ease;
+        z-index: 1100;
     }
 
-    /* mobile only */
-    @media (max-width: 800px) {
-        .hamburger {
-            display: block;
+        .sidebar.open {
+            left: 0;
         }
 
-        .sidebar {
-            position: fixed;
-            top: 0;
-            left: -100%;
-            width: 240px;
-            height: 100vh;
-            transition: left 0.3s ease;
-            z-index: 1100;
-        }
-
-            .sidebar.open {
-                left: 0;
-            }
-
-        .content {
-            margin-left: 0;
-            width: 100%;
-            padding: 20px;
-        }
+    .projects {
+        gap: 50px;
     }
 
+    .content {
+        margin-left: 0;
+        width: 100%;
+        padding: 20px;
+    }
 
-        .content {
-            margin-left: 0;
-            width: 100%;
-        }
+    h1, h2 {
+        text-align: center;
     }
 }
